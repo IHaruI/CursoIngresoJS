@@ -8,6 +8,6 @@ function mostrar()
 
 	nombre = prompt("Ingrese su nombre");
 
-	document.getElementById("txtIdNombre").value = nombre;
+	txtIdNombre.value = nombre;
 }
 

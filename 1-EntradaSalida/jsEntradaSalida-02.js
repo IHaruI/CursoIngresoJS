@@ -5,8 +5,8 @@ function mostrar()
 {
 	let nombre;
 
-	nombre = prompt ("Ingrese tu nombre")
+	nombre = prompt("Ingrese tu nombre");
 
-	alert(nombre)
+	alert(nombre);
 
 }
