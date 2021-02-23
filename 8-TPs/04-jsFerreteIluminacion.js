@@ -10,5 +10,143 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
- 	
+    let precio = 35;
+    let cantidad;
+    let marca;
+    let descuento;
+    let importeFinal;
+    let iibb;
+    let precioConDescuento;
+
+    cantidad = txtIdCantidad.value;
+
+    cantidad = parseInt(cantidad);
+
+    marca = Marca.value;
+
+    switch(cantidad){
+        case 1:
+        case 2:
+            descuento = 0;
+            break;
+        
+        case 3:
+            if(marca == "ArgentinaLuz")
+            {
+                descuento = 15;
+            }
+            else if(marca == "FelipeLamparas")
+            {
+                descuento = 10;
+            }
+            else
+            {
+                descuento = 5;
+            }
+            break;
+        
+        case 4:
+            if(marca == "ArgentinaLuz" || marca == "FelipeLamparas")
+            {
+                descuento = 25;
+            }
+            else
+            {
+                descuento = 20;
+            }
+            break;
+
+        case 5:
+            if(marca == "ArgentinaLuz")
+            {
+                descuento = 40;
+            }
+            else
+            {
+                descuento = 30;
+            }
+            break;
+
+        default:
+            descuento = 50;
+    }
+
+    precioConDescuento = precio - precio * descuento / 100;
+
+    txtIdprecioDescuento.value = precioConDescuento;
+
+    importeFinal = precioConDescuento * cantidad;
+
+    if(importeFinal > 120)
+    {
+        iibb = importeFinal * 10 / 100;
+        importeFinal = importeFinal + iibb;
+
+        alert("Total: " + importeFinal + "$. " + "Usted pagó " + iibb + "$ de ingreso bruto");
+    }
+    else
+    {
+        alert("Total: " + importeFinal + "$");
+    }
+
+
+    /*let precioPorUnidad;
+    let cantidad;
+    let descuento;
+    let precioTotal;
+    let precioConDescuento;
+    let marca;
+
+    precioPorUnidad = 35;
+
+    cantidad = txtIdCantidad.value;
+    cantidad = parseInt(cantidad);
+
+    marca = Marca.value;
+
+    if(cantidad > 5)
+    {
+        descuento = 50;
+    }
+    else
+    {
+        if(marca == "ArgentinaLuz" || marca == "FelipeLamparas")
+        {
+            descuento = 40;
+        }
+        else
+        {
+            descuento = 30;
+        }
+        if(cantidad < 5)
+        {
+            if(marca == "ArgentinaLuz" || marca == "FelipeLamparas")
+            {
+                descuento = 25;
+            }
+            else
+            {
+                descuento = 20;
+            }
+            if(cantidad == 3)
+            {
+                if(marca == "ArgentinaLuz")
+                {
+                    descuento = 15;
+                }
+                else
+                {
+                    descuento = 5;
+                }
+                if(marca == "FelipeLamparas")
+                {
+                    descuento = 10;
+                }
+            }
+        }
+    }
+
+    precioTotal = cantidad * precioPorUnidad;
+    precioConDescuento = precioTotal - (precioTotal * descuento / 100);
+    txtIdprecioDescuento.value = precioConDescuento;*/
 }

@@ -1,11 +1,23 @@
 function mostrar()
 {
-	//tomo el mes
-	var mesDelAño =txtIdMes.value;
-	alert(mesDelAño);
+	let mes;
 	
-	
+	mes = txtIdMes.value;
 
+	switch(mes){
+		case "Febrero":
+			alert("Tiene 28 días.");
+			break;
 
+		case "Abril":
+		case "Junio":
+		case "Septiembre":
+		case "Noviembre":
+			alert("Tiene 30 días.");
+			break;
 
-}//FIN DE LA FUNCIÓN
+		default:
+			alert("Tiene 31 días.");
+			break;
+	}
+}

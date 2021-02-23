@@ -1,8 +1,20 @@
 function mostrar()
 {
-	//tomo la edad  
-	alert("ok");
-	
+	let edad;
+	let estado;
 
+	edad = txtIdEdad.value;
+	edad = parseInt(edad);
 
-}//FIN DE LA FUNCIÓN
+	estado = estadoCivil.value;
+
+	if(estado == "Soltero" && edad >= 18){
+		alert("Es soltero y no es menor.");
+	}
+
+	/*
+	else if(estado == "Soltero"){
+		alert("Es soltero y no es menor.");
+	}
+	*/
+}
